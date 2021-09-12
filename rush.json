@@ -390,9 +390,11 @@
    */
   "projects": [{
     "packageName": "nestjs-api",
-    "projectFolder": "apps/nestjs-api"
+    "projectFolder": "apps/nestjs-api",
+    "versionPolicyName": "versionPolicy"
   }, {
     "packageName": "site",
-    "projectFolder": "apps/site"
+    "projectFolder": "apps/site",
+    "versionPolicyName": "versionPolicy"
   }]
 }

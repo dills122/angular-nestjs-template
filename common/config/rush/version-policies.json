@@ -99,4 +99,10 @@
   // 
   //   // "includeEmailInChangeFile": true
   // }
+  {
+    "policyName": "versionPolicy",
+    "definitionName": "lockStepVersion",
+    "version": "0.1.0",
+    "nextBump": "patch"
+  },
 ]
