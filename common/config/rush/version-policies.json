@@ -11,7 +11,7 @@
 [{
     "policyName": "versionPolicy",
     "definitionName": "lockStepVersion",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "nextBump": "patch"
   }
   // {

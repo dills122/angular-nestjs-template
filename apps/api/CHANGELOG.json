@@ -1,6 +1,12 @@
 {
-  "name": "nestjs-api",
+  "name": "api",
   "entries": [
+    {
+      "version": "0.1.2",
+      "tag": "api_v0.1.2",
+      "date": "Fri, 07 Jan 2022 07:00:03 GMT",
+      "comments": {}
+    },
     {
       "version": "0.1.1",
       "tag": "nestjs-api_v0.1.1",
