@@ -16,7 +16,7 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.50.0",
+  "rushVersion": "5.59.2",
 
   /**
    * The next field selects which package manager should be installed and determines its version.
@@ -26,9 +26,9 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "6.14.7",
+  "pnpmVersion": "6.25.0",
 
-  // "npmVersion": "4.5.0",
+  // "npmVersion": "6.14.15",
   // "yarnVersion": "1.9.4",
 
   /**
@@ -51,6 +51,7 @@
      * The default value is "local".
      */
     // "pnpmStore": "local",
+
     /**
      * If true, then Rush will add the "--strict-peer-dependencies" option when invoking PNPM.
      * This causes "rush install" to fail if there are unsatisfied peer dependencies, which is
@@ -62,6 +63,7 @@
      * It is strongly recommended to set strictPeerDependencies=true.
      */
     // "strictPeerDependencies": true,
+
     /**
      * Configures the strategy used to select versions during installation.
      *
@@ -75,6 +77,7 @@
      * will recalculate all version selections.
      */
     // "resolutionStrategy": "fast",
+
     /**
      * If true, then `rush install` will report an error if manual modifications
      * were made to the PNPM shrinkwrap file without running "rush update" afterwards.
@@ -92,6 +95,7 @@
      * The default value is false.
      */
     // "preventManualShrinkwrapChanges": true,
+
     /**
      * If true, then `rush install` will use the PNPM workspaces feature to perform the
      * install.
@@ -106,7 +110,7 @@
      *
      * This option is experimental. The default value is false.
      */
-    // "useWorkspaces": true
+    "useWorkspaces": true
   },
 
   /**
@@ -256,7 +260,7 @@
      * you might configure your system's trigger to look for a special string such as "[skip-ci]"
      * in the commit message, and then customize Rush's message to contain that string.
      */
-    // "versionBumpCommitMessage": "Applying package updates. [skip-ci]",
+    // "versionBumpCommitMessage": "Bump versions [skip ci]",
     /**
      * The commit message to use when committing changes during 'rush version'.
      *
@@ -264,7 +268,7 @@
      * you might configure your system's trigger to look for a special string such as "[skip-ci]"
      * in the commit message, and then customize Rush's message to contain that string.
      */
-    // "changeLogUpdateCommitMessage": "Deleting change files and updating change logs for package updates. [skip-ci]"
+    // "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
   },
 
   "repository": {
@@ -283,19 +287,17 @@
      * your PR branch, and in this situation "rush change" will also automatically invoke "git fetch"
      * to retrieve the latest activity for the remote master branch.
      */
-    "url": "https://github.com/dills122/angular-nestjs-template",
-
+    // "url": "https://github.com/microsoft/rush-example",
     /**
      * The default branch name. This tells "rush change" which remote branch to compare against.
      * The default value is "master"
      */
-    "defaultBranch": "master",
-
+    // "defaultBranch": "master",
     /**
      * The default remote. This tells "rush change" which remote to compare against if the remote URL is
      * not set or if a remote matching the provided remote URL is not found.
      */
-    "defaultRemote": "origin"
+    // "defaultRemote": "origin"
   },
 
   /**
@@ -383,14 +385,82 @@
    */
   "projects": [
     {
-      "packageName": "nestjs-api",
-      "projectFolder": "apps/nestjs-api",
-      "versionPolicyName": "versionPolicy"
-    },
-    {
       "packageName": "frontend",
       "projectFolder": "apps/frontend",
       "versionPolicyName": "versionPolicy"
+    },
+    {
+      "packageName": "api",
+      "projectFolder": "apps/api",
+      "versionPolicyName": "versionPolicy"
     }
+    // {
+    //   /**
+    //    * The NPM package name of the project (must match package.json)
+    //    */
+    //   "packageName": "my-app",
+    //
+    //   /**
+    //    * The path to the project folder, relative to the rush.json config file.
+    //    */
+    //   "projectFolder": "apps/my-app",
+    //
+    //   /**
+    //    * An optional category for usage in the "browser-approved-packages.json"
+    //    * and "nonbrowser-approved-packages.json" files.  The value must be one of the
+    //    * strings from the "reviewCategories" defined above.
+    //    */
+    //   "reviewCategory": "production",
+    //
+    //   /**
+    //    * A list of local projects that appear as devDependencies for this project, but cannot be
+    //    * locally linked because it would create a cyclic dependency; instead, the last published
+    //    * version will be installed in the Common folder.
+    //    */
+    //   "cyclicDependencyProjects": [
+    //     // "my-toolchain"
+    //   ],
+    //
+    //   /**
+    //    * If true, then this project will be ignored by the "rush check" command.
+    //    * The default value is false.
+    //    */
+    //   // "skipRushCheck": false,
+    //
+    //   /**
+    //    * A flag indicating that changes to this project will be published to npm, which affects
+    //    * the Rush change and publish workflows. The default value is false.
+    //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
+    //    */
+    //   // "shouldPublish": false,
+    //
+    //   /**
+    //    * Facilitates postprocessing of a project's files prior to publishing.
+    //    *
+    //    * If specified, the "publishFolder" is the relative path to a subfolder of the project folder.
+    //    * The "rush publish" command will publish the subfolder instead of the project folder.  The subfolder
+    //    * must contain its own package.json file, which is typically a build output.
+    //    */
+    //   // "publishFolder": "temp/publish",
+    //
+    //   /**
+    //    * An optional version policy associated with the project.  Version policies are defined
+    //    * in "version-policies.json" file.  See the "rush publish" documentation for more info.
+    //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
+    //    */
+    //   // "versionPolicyName": ""
+    // },
+    //
+    // {
+    //   "packageName": "my-controls",
+    //   "projectFolder": "libraries/my-controls",
+    //   "reviewCategory": "production"
+    // },
+    //
+    // {
+    //   "packageName": "my-toolchain",
+    //   "projectFolder": "tools/my-toolchain",
+    //   "reviewCategory": "tools"
+    // }
   ]
 }

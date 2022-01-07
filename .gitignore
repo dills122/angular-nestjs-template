@@ -65,5 +65,8 @@ common/temp/
 common/autoinstallers/*/.npmrc
 **/.rush/temp/
 
+# Heft
+.heft
+
 certs/
 keys/
